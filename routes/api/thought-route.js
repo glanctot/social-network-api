@@ -12,13 +12,16 @@ router
     .route('/')
     .get(getAllThoughts)
 
-router.route('/:userId').post(addThought)
+router.route('/:userId')
+    .post(addThought)
+
+router.route('/:userId/:thoughtId')
+    .delete(removeThought)
 
 // set up get one, put and delete at /api/thought/:id
 router
     .route('/:id')
     .get(getThoughtById)
     .put(updateThought)
-    .delete(removeThought)
 
 module.exports = router;
