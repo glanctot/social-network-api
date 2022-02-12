@@ -11,32 +11,33 @@ const UserSchema = new Schema({
         type: String,
         required: true,
         unique: true,
+        match: [/.+@.+\..+/]
+    },
+    thought: [
+    {
+        type: Schema.Types.ObjectId,
+        ref: 'Thought'
     }
+],
+    friends: [
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }
+    ]
+},
+{
+    toJSON: {
+        virtuals: true
+    }, 
+    id: false
 })
-//     thoughts: [
-//         {
-//             type: Schema.Types.ObjectId,
-//             ref: 'Thought'
-//         }
-//     ],
-//     friends: [
-//         {
-//             type: Schema.Types.ObjectId,
-//             ref: 'User'
-//         }
-//     ]
-// },
-// {
-//     toJSON: {
-//         virtuals: true
-//     },
-//     id: false
-// })
+
 
 //get total count of friends
-// UserSchema.virtual('friendCount').get(function() {
-//     return this.
-// })
+ UserSchema.virtual('friendCount').get(function() {
+     return this.friends.length
+})
 
 //create user model using userSchema
 const User = model('User', UserSchema);

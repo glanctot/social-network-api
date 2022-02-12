@@ -10,11 +10,11 @@ const userController = {
             res.status(400).json(err);
         })
     },
-    //get one pizza by id
+    //get one user by id
     getUserById({ params}, res) {
         User.findOne({ _id: params.id })
         .then(dbUserData => {
-            //if no pizza found send 404
+            //if no user found send 404
             if(!dbUserData) {
                 res.status(404).json({ message: 'No user found with this id' });
                 return;
