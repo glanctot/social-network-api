@@ -22,6 +22,8 @@ router
     .delete(deleteUser)
 
 // add a user to a friend list    
-router.route('/users/:userId/friends').post(addFriend)
+router.route('/:userId/friends/:friendId')
+    .post(addFriend)
+
 
 module.exports = router;
