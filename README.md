@@ -4,7 +4,7 @@
 A backend api for a social network made with MongoDB.  Users can add/delete friends, share thoughts and react to those thoughts.
 
 ## Link
-[Link to Google Drive Video](https://drive.google.com/file/d/1Dce7w3g-qAduObrl_P0U5XxRks4u78Ww/view)
+[Link to Google Drive Video](https://drive.google.com/file/d/1Dce7w3g-qAduObrl_P0U5XxRks4u78Ww/view) <br>
 [Link to Github](https://github.com/glanctot/social-network-api)
 
 ## Installation
